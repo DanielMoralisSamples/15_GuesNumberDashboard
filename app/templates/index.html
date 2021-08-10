@@ -1,0 +1,39 @@
+{% extends "templates/base_template.html" %}
+{% block title %}Guess The Number{% endblock %}
+{% block head%}
+{% endblock %}
+{% block main %}
+
+<div class="p-3 mb-2 bg-secondary text-white">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center">Connect to See Dashboard</h1>
+      <hr>
+      <div class="mb-3">
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <input id="username" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+            <input id="useremail" type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+          </div>
+        </div>
+        <div>  
+          <button class="btn btn-dark" id="submit" onclick="login();">Connect MetaMask</button>
+        </div>
+        <hr>
+        <div class="form-group">
+          <div id="resultSpace">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block script %}
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+  <script src="{{ url_for('static', filename='js/logic.js') }}"></script>
+{% endblock %}
